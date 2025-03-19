@@ -106,7 +106,7 @@ export default function BusSelector({
 
   return (
     <div
-      className={`absolute ${selectorPosition} z-[1000] bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden bus-selector`}
+      className={`relative  z-[1000] bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden bus-selector`}
       onClick={(e) => e.stopPropagation()} // Prevent map clicks from propagating through UI
     >
       <div

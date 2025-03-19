@@ -64,8 +64,6 @@ export default function LocationMarker() {
   const [showEta, setShowEta] = useState(false);
   const [locatingUser, setLocatingUser] = useState(false);
 
-  const map = useMap();
-
   // Filter buses based on selected routes
   const filteredBusPositions = useMemo(() => {
     return busPositions.filter((bus) => selectedRoutes.includes(bus.routeId));
@@ -335,19 +333,21 @@ export default function LocationMarker() {
         </div>
       )}
 
-      {/* Bus selector UI */}
-      <BusSelector
-        availableRoutes={availableRoutes}
-        selectedRoutes={selectedRoutes}
-        onRouteToggle={handleRouteToggle}
-        lockedRoutes={["19"]} // Lock route 19 so it can't be deselected
-      />
+      <div className="absolute bottom-0 pb-24 h-full w-full">
+        {/* Bus selector UI */}
+        <BusSelector
+          availableRoutes={availableRoutes}
+          selectedRoutes={selectedRoutes}
+          onRouteToggle={handleRouteToggle}
+          lockedRoutes={["19"]} // Lock route 19 so it can't be deselected
+        />
 
-      {/* ETA panel */}
-      <BusEtaPanel
-        etaData={etaData}
-        isVisible={showEta && !!position && etaData.length > 0}
-      />
+        {/* ETA panel */}
+        <BusEtaPanel
+          etaData={etaData}
+          isVisible={showEta && !!position && etaData.length > 0}
+        />
+      </div>
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function Map() {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-hidden relative">
+    <div className="w-full h-screen overflow-hidden relative">
       {/* <div
         className={`absolute top-4 left-4 z-[1000] bg-white/80 dark:bg-gray-800/80 p-3 rounded-lg shadow-lg ${isMobile ? "max-w-[calc(100%-32px)]" : "max-w-[300px]"}`}
         onClick={(e) => e.stopPropagation()} // Prevent map clicks from propagating

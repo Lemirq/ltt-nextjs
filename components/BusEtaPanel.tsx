@@ -113,7 +113,7 @@ export default function BusEtaPanel({ etaData, isVisible }: BusEtaPanelProps) {
 
   return (
     <div
-      className={`absolute ${panelPosition} z-[990] bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg overflow-hidden eta-panel`}
+      className={`relative mt-5 z-[990] bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg overflow-hidden eta-panel`}
       onClick={(e) => e.stopPropagation()} // Prevent map clicks from propagating through UI
     >
       <div className="flex justify-between items-center mb-2">
