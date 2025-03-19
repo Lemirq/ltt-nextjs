@@ -61,7 +61,7 @@ const routeColors: Record<string, string> = {
 };
 
 export default function BusEtaPanel({ etaData, isVisible }: BusEtaPanelProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   // Detect mobile device
