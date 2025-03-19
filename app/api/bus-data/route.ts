@@ -19,6 +19,8 @@ export async function GET() {
     }
 
     const data = await response.json();
+    console.log("Bus data fetched successfully");
+    console.log(data);
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error fetching bus data:", error);

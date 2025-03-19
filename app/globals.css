@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .leaflet-control-zoom {
+        display: none; /* Hide default zoom controls on mobile */
+    }
+
+    .leaflet-popup-content {
+        max-width: 240px; /* Limit popup width on mobile */
+        font-size: 14px;
+    }
+}
+
+/* Leaflet popup styles */
+.leaflet-popup-content-wrapper {
+    border-radius: 0.5rem;
+}
+
+.leaflet-popup-content {
+    margin: 12px 14px;
+    line-height: 1.5;
+}
+
+/* Custom bus marker styles */
+.bg-blue-600 {
+    background-color: #2563eb;
+}
+.bg-green-600 {
+    background-color: #16a34a;
+}
+.bg-purple-600 {
+    background-color: #9333ea;
+}
+.bg-yellow-600 {
+    background-color: #ca8a04;
+}
+.bg-orange-600 {
+    background-color: #ea580c;
+}
+.bg-pink-600 {
+    background-color: #db2777;
+}
+.bg-indigo-600 {
+    background-color: #4f46e5;
+}
+.bg-gray-600 {
+    background-color: #4b5563;
+}
+.bg-red-600 {
+    background-color: #dc2626;
+}
+
+/* Bus selector and ETA panel styles */
+.bus-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e5e7eb;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+    .bus-panel {
+        background-color: rgba(31, 41, 55, 0.9);
+        border-color: #374151;
+    }
+}
+
+/* Fix for small touch targets on mobile */
+@media (max-width: 768px) {
+    input[type="checkbox"] {
+        min-width: 20px;
+        min-height: 20px;
+    }
+
+    button,
+    [role="button"] {
+        min-height: 36px;
+        min-width: 36px;
+    }
 }
